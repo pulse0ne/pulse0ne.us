@@ -1,10 +1,18 @@
 'use strict';
 
-var path = require('path');
+var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
 var express = require('express');
-var https = require('https');
 var fs = require('fs');
+var https = require('https');
+var mongoose = require('mongoose');
+var passport = require('passport');
+var path = require('path');
+var rateLimit = require('express-rate-limit');
+var session = require('express-session');
 
+var localStrategy = require('passport-local').Strategy;
+var User = require('./models/user.js');
 var app = express();
 
 var http_port = 80;
@@ -19,7 +27,21 @@ try {
 }
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cookieParser());
+app.use(bodyParser());
+app.use(session({secret: 'e44be806-838d-4997-a46d-6d09ad146bd7'}));
+app.use(passport.initialize());
+app.use(passport.session());
 
+var isLoggedIn = function (req, res, next) {
+    if (req.isAuthenticated()) {
+        return next();
+    }
+
+    res.redirect('/');
+};
+
+// HTTPS setup
 var https_options = {
     key: fs.readFileSync(path.join(__dirname, 'certs/privkey.pem')),
     cert: fs.readFileSync(path.join(__dirname, 'certs/fullchain.pem'))
