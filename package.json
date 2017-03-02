@@ -1,8 +1,19 @@
 {
-    "name": "pulse0ne.us site",
+    "name": "pulse0ne.us",
     "version": "0.0.1",
+    "description": "The pulse0ne.us site",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/pulse0ne/pulse0ne.us.git"
+    },
+    "license": "MIT",
     "dependencies": {
         "express": "latest",
         "body-parser": "latest"
+    },
+    "author": {
+        "name": "Tyler Snedigar",
+        "email": "snedigart@gmail.com",
+        "url": "https://pulse0ne.us"
     }
 }
