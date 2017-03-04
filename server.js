@@ -27,12 +27,11 @@ try {
     // no config
 }
 
-// TODO
-//mongoose.connect('db_url');
+mongoose.connect('mongodb://localhost:27017/users');
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
-app.use(bodyParser());
+app.use(bodyParser.json());
 app.use(session({secret: 'e44be806-838d-4997-a46d-6d09ad146bd7', resave: false, saveUninitialized: false}));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -103,13 +102,8 @@ passport.use('local-login', new localStrategy(function (email, password, done) {
                 return done(err);
             }
 
-            if (!user) {
-                console.error('Did not find user with email: ' + email);
-                return done(null, false);
-            }
-
-            if (!user.validPassword(password)) {
-                console.error('Incorrect password for user with email: ' + email);
+            if (!user || !user.validPassword(password)) {
+                console.error('Could not login user: ' + email);
                 return done(null, false);
             }
 
