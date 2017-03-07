@@ -2,36 +2,56 @@
 <html lang="en" ng-app="app">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <title>pulse0ne.us</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="assets/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="assets/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="assets/manifest.json">
+    <link rel="mask-icon" href="assets/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="assets/favicon.ico">
+    <meta name="msapplication-config" content="assets/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
     <link rel="stylesheet" href="style.css">
     <base href="/">
 </head>
 <body ng-controller="mainController">
 <div ng-cloak>
-    <h1>
-        Hello
-    </h1>
+    <section layout="column" layout-gt-md="row" flex>
+        <md-sidenav md-component-id="nav-menu" class="nav-menu" md-is-locked-open="$mdMedia('gt-md')">
+            <div id="nav-logo">
+                <md-icon class="logo" md-svg-icon="assets/logo.svg" ng-click="navigate(pages.home)"></md-icon>
+            </div>
+            <ul>
+                <li ng-repeat="page in pages" ng-class="{ 'nav-active': page === active }">
+                    <a ng-click="navigate(page)">
+                        <i class="fa fa-fw fa-{{page.fa}}" aria-hidden="true"></i>
+                        {{page.title}}
+                    </a>
+                </li>
+            </ul>
+        </md-sidenav>
+        <md-toolbar id="toolbar" class="md-toolbar-tools" md-scroll-shrink hide-gt-md>
+            <a ng-click="hamburgerClicked()">
+                <i class="fa fa-fw fa-bars"></i>
+            </a>
+            {{active.title}}
+        </md-toolbar>
+        <md-content class="content" flex>
+            <ng-view></ng-view>
+        </md-content>
 
-    <nav class="nav-menu">
-        <ul>
-            <li ng-repeat="page in pages" ng-class="{ 'nav-active': page === active }">
-                <a ng-href="{{page.path}}" ng-click="navigate(page)">
-                    <i class="fa fa-fw fa-{{page.fa}}" aria-hidden="true"></i>
-                    {{page.title}}
-                </a>
-            </li>
-        </ul>
-    </nav>
-
-    <ng-view></ng-view>
-
+    </section>
 </div>
 </body>
-<!-- http://cssmenumaker.com/menu/whiteout-flyout-menu# -->
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular-animate.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular-aria.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular-route.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
 <script src="app.js"></script>
 </html>

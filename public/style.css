@@ -7,6 +7,7 @@ body {
 .nav-menu {
     font-weight: 300;
     width: 200px;
+    background: transparent;
 }
 
 .nav-menu ul {
@@ -24,8 +25,7 @@ body {
 }
 
 .nav-menu ul li:hover,
-.nav-menu ul li.nav-active
-{
+.nav-menu ul li.nav-active {
     background: #373737;
     border-left: 3px solid #3dbd99;
 }
@@ -39,10 +39,33 @@ body {
     cursor: default;
 }
 
-.nav-menu ul li:hover a {
+.nav-menu ul li:hover a,
+.nav-menu ul li.nav-active a {
     color: #3dbd99;
 }
 
-.nav-menu ul li.nav-active a {
-    color: #3dbd99;
+#nav-logo {
+    margin: auto;
+}
+
+#nav-logo .logo {
+    width: 64px;
+    height: 64px;
+    padding: 32px 0;
+    margin: auto;
+    outline: 0;
+}
+
+#nav-logo md-icon.logo {
+    cursor: pointer;
+}
+
+md-content.content {
+    background: transparent;
+    color: #dfdfdf;
+    font-family: 'Lato', sans-serif;
+}
+
+#toolbar {
+    background: #373737;
 }

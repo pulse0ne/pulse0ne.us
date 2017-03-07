@@ -27,7 +27,8 @@ try {
     // no config
 }
 
-mongoose.connect('mongodb://localhost:27017/users');
+// TODO
+//mongoose.connect('mongodb://localhost:27017/users');
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());

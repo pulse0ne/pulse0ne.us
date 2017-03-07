@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('app', ['ngAnimate', 'ngAria', 'ngRoute']);
+var app = angular.module('app', ['ngAnimate', 'ngAria', 'ngRoute', 'ngMaterial']);
 
 var _pages = {
     home: { fa: 'home', title: 'Home', path: '/', template: 'templates/home.tmpl.html' },
@@ -32,13 +32,24 @@ app.service('httpService', [
 
 app.controller('mainController', [
     '$scope',
+    '$location',
+    '$mdSidenav',
     'httpService',
-    function ($scope, http) {
+    function ($scope, $location, $mdSidenav, http) {
         $scope.pages = _pages;
         $scope.active = $scope.pages.home;
 
         $scope.navigate = function (page) {
             $scope.active = page;
+            $location.url(page.path);
+            var sidenav = $mdSidenav('nav-menu');
+            if (!sidenav.isLockedOpen()) {
+                sidenav.close();
+            }
+        };
+
+        $scope.hamburgerClicked = function () {
+            $mdSidenav('nav-menu').toggle();
         };
     }
 ]);
