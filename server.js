@@ -138,6 +138,11 @@ app.post('/api/blog/newpost', isLoggedIn, function (req, res) {
     // TODO
 });
 
+// catch-all
+app.get('*', function (req, res) {
+    res.redirect('/');
+});
+
 
 //===========================//
 //          LISTEN           //

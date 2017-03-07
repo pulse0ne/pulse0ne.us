@@ -2,7 +2,10 @@
 <html lang="en" ng-app="app">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <base href="/">
 </head>
 <body ng-controller="mainController">
 <div ng-cloak>
@@ -10,12 +13,19 @@
         Hello
     </h1>
 
-    <nav>
+    <nav class="nav-menu">
         <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
+            <li ng-repeat="page in pages" ng-class="{ 'nav-active': page === active }">
+                <a ng-href="{{page.path}}" ng-click="navigate(page)">
+                    <i class="fa fa-fw fa-{{page.fa}}" aria-hidden="true"></i>
+                    {{page.title}}
+                </a>
+            </li>
         </ul>
     </nav>
+
+    <ng-view></ng-view>
+
 </div>
 </body>
 <!-- http://cssmenumaker.com/menu/whiteout-flyout-menu# -->
