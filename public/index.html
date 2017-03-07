@@ -21,30 +21,21 @@
 </head>
 <body ng-controller="mainController">
 <div ng-cloak>
-    <section layout="column" layout-gt-md="row" flex>
-        <md-sidenav md-component-id="nav-menu" class="nav-menu" md-is-locked-open="$mdMedia('gt-md')">
+    <section layout="row" flex>
+        <md-sidenav md-component-id="nav-menu" class="nav-menu" ng-class="{ 'full': full() }" md-is-locked-open="true">
             <div id="nav-logo">
-                <md-icon class="logo" md-svg-icon="assets/logo.svg" ng-click="navigate(pages.home)"></md-icon>
+                <md-icon class="logo" ng-class="{ 'full': full() }" md-svg-icon="assets/logo.svg" ng-click="navigate(pages.home)"></md-icon>
             </div>
             <ul>
                 <li ng-repeat="page in pages" ng-class="{ 'nav-active': page === active }">
                     <a ng-click="navigate(page)">
                         <i class="fa fa-fw fa-{{page.fa}}" aria-hidden="true"></i>
-                        {{page.title}}
+                        <span ng-show="full()">{{page.title}}</span>
                     </a>
                 </li>
             </ul>
         </md-sidenav>
-        <md-toolbar id="toolbar" class="md-toolbar-tools" md-scroll-shrink hide-gt-md>
-            <a ng-click="hamburgerClicked()">
-                <i class="fa fa-fw fa-bars"></i>
-            </a>
-            {{active.title}}
-        </md-toolbar>
-        <md-content class="content" flex>
-            <ng-view></ng-view>
-        </md-content>
-
+        <ng-view></ng-view>
     </section>
 </div>
 </body>

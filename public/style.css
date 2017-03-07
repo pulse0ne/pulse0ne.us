@@ -4,10 +4,18 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-.nav-menu {
+md-sidenav.nav-menu {
     font-weight: 300;
-    width: 200px;
+    width: 50px;
+    min-width: 50px;
+    max-width: 50px;
     background: transparent;
+}
+
+md-sidenav.nav-menu.full {
+    width: 200px;
+    min-width: 200px;
+    max-width: 200px;
 }
 
 .nav-menu ul {
@@ -27,21 +35,27 @@ body {
 .nav-menu ul li:hover,
 .nav-menu ul li.nav-active {
     background: #373737;
-    border-left: 3px solid #3dbd99;
+    border-left: 3px solid #aa6ca8;
 }
 
 .nav-menu ul li a {
     display: block;
-    padding: 10px 20px;
+    padding: 10px 0;
+    margin: auto;
     text-decoration: none;
     color: #dfdfdf;
     font-size: 18px;
     cursor: default;
 }
 
+.nav-menu.full ul li a {
+    padding: 10px 20px;
+    margin: 0;
+}
+
 .nav-menu ul li:hover a,
 .nav-menu ul li.nav-active a {
-    color: #3dbd99;
+    color: #aa6ca8;
 }
 
 #nav-logo {
@@ -49,11 +63,17 @@ body {
 }
 
 #nav-logo .logo {
+    width: 32px;
+    height: 32px;
+    padding: 16px 0;
+    margin: auto;
+    outline: 0;
+}
+
+#nav-logo .logo.full {
     width: 64px;
     height: 64px;
     padding: 32px 0;
-    margin: auto;
-    outline: 0;
 }
 
 #nav-logo md-icon.logo {
@@ -64,8 +84,4 @@ md-content.content {
     background: transparent;
     color: #dfdfdf;
     font-family: 'Lato', sans-serif;
-}
-
-#toolbar {
-    background: #373737;
 }

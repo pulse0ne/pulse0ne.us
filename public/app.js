@@ -34,8 +34,9 @@ app.controller('mainController', [
     '$scope',
     '$location',
     '$mdSidenav',
+    '$mdMedia',
     'httpService',
-    function ($scope, $location, $mdSidenav, http) {
+    function ($scope, $location, $mdSidenav, $mdMedia, http) {
         $scope.pages = _pages;
         $scope.active = $scope.pages.home;
 
@@ -48,8 +49,8 @@ app.controller('mainController', [
             }
         };
 
-        $scope.hamburgerClicked = function () {
-            $mdSidenav('nav-menu').toggle();
+        $scope.full = function () {
+            return $mdMedia('gt-md');
         };
     }
 ]);

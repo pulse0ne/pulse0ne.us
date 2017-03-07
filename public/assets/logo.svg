@@ -1,89 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="66.346664mm"
-   height="103.74081mm"
-   viewBox="0 0 235.0866 367.58553"
-   id="svg2"
-   version="1.1"
-   inkscape:version="0.91 r13725"
-   sodipodi:docname="logo.svg">
-  <defs
-     id="defs4">
-    <linearGradient
-       inkscape:collect="always"
-       id="linearGradient4440">
-      <stop
-         style="stop-color:#3dbd99;stop-opacity:1"
-         offset="0"
-         id="stop4442" />
-      <stop
-         style="stop-color:#822ab5;stop-opacity:1"
-         offset="1"
-         id="stop4444" />
-    </linearGradient>
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient4440"
-       id="linearGradient4446"
-       x1="174.0386"
-       y1="324.47699"
-       x2="378.80508"
-       y2="661.86792"
-       gradientUnits="userSpaceOnUse" />
-  </defs>
-  <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="0.98994949"
-     inkscape:cx="126.24292"
-     inkscape:cy="85.297502"
-     inkscape:document-units="px"
-     inkscape:current-layer="layer1"
-     showgrid="false"
-     inkscape:window-width="1914"
-     inkscape:window-height="2098"
-     inkscape:window-x="1920"
-     inkscape:window-y="0"
-     inkscape:window-maximized="0"
-     fit-margin-top="1"
-     fit-margin-left="1"
-     fit-margin-right="1"
-     fit-margin-bottom="1" />
-  <metadata
-     id="metadata7">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(-151.30239,-296.24771)">
-    <path
-       style="fill:none;fill-opacity:1;stroke:url(#linearGradient4446);stroke-width:48;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 268.8457,323.79102 a 90,90 0 0 0 -90,90 90,90 0 0 0 90,90 90,90 0 0 0 90,-90 90,90 0 0 0 -90,-90 z m -89.99804,99.44921 0,213.38672 0,-213.38672 z"
-       id="path4136"
-       inkscape:connector-curvature="0" />
-  </g>
+<svg id="svg2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="425" width="425" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 424.99999 424.99999" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <defs id="defs4">
+  <linearGradient id="linearGradient4307" y2="764.33" gradientUnits="userSpaceOnUse" x2="156.43" y1="268.62" x1="560.34">
+   <stop id="stop4303" stop-color="#1e35aa" offset="0"/>
+   <stop id="stop4309" stop-color="#a55b87" offset=".43976"/>
+   <stop id="stop4305" stop-color="#f3e890" offset="1"/>
+  </linearGradient>
+ </defs>
+ <metadata id="metadata7">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g id="layer1" transform="translate(-155.97 -288.15)">
+  <path id="path4136" d="m516.43 460.58c0 81.462-66.038 147.5-147.5 147.5-20.366 0-39.767-4.1274-57.414-11.591l-90.456 67.675 0.36968-203.58c0.14792-81.462 66.038-147.5 147.5-147.5s147.5 66.038 147.5 147.5z" stroke="url(#linearGradient4307)" stroke-linecap="round" stroke-width="48" fill="none"/>
+ </g>
 </svg>
