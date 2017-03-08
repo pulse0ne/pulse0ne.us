@@ -41,7 +41,7 @@ md-sidenav.nav-menu.full {
 .nav-menu ul li a {
     display: block;
     padding: 10px 0;
-    margin: auto;
+    text-align: center;
     text-decoration: none;
     color: #dfdfdf;
     font-size: 18px;
@@ -51,6 +51,7 @@ md-sidenav.nav-menu.full {
 .nav-menu.full ul li a {
     padding: 10px 20px;
     margin: 0;
+    text-align: inherit;
 }
 
 .nav-menu ul li:hover a,

@@ -3,9 +3,9 @@
 var app = angular.module('app', ['ngAnimate', 'ngAria', 'ngRoute', 'ngMaterial']);
 
 var _pages = {
-    home: { fa: 'home', title: 'Home', path: '/', template: 'templates/home.tmpl.html' },
-    blog: { fa: 'edit', title: 'Blog', path: '/blog', template: 'templates/blog.tmpl.html' },
-    resume: { fa: 'vcard', title: 'Resume', path: '/resume', template: 'templates/resume.tmpl.html' }
+    home: { ligature: 'home', title: 'Home', path: '/', template: 'templates/home.tmpl.html' },
+    blog: { ligature: 'edit', title: 'Blog', path: '/blog', template: 'templates/blog.tmpl.html' },
+    resume: { ligature: 'briefcase', title: 'Resume', path: '/resume', template: 'templates/resume.tmpl.html' }
 };
 
 app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
@@ -50,7 +50,7 @@ app.controller('mainController', [
         };
 
         $scope.full = function () {
-            return $mdMedia('gt-md');
+            return $mdMedia('gt-xs');
         };
     }
 ]);
